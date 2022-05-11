@@ -1,0 +1,20 @@
+#title{
+    color: white;
+    
+}
+#one a{
+    color: white;
+}
+
+#searchButton{
+    color: black;
+    background-color: rgb(193, 246, 33);
+}
+
+#two{
+    color: black;
+    background-color: rgb(193, 246, 33);
+}
+.login{
+    padding-left: 1%;
+}
