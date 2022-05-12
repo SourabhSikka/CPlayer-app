@@ -7,7 +7,7 @@ import { DashboardComponent } from './Player/dashboard/dashboard.component';
 import { NavbarComponent } from './Player/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './player/footer/footer.component';
-import { TestingComponent } from './components/testing/testing.component';
+
 
 
 @NgModule({
@@ -15,8 +15,8 @@ import { TestingComponent } from './components/testing/testing.component';
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent,
-    TestingComponent
+    FooterComponent
+    
   ],
   imports: [
     BrowserModule,
