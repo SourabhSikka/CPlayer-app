@@ -21,5 +21,15 @@
   }
   .btn-warning
 {
-    background-color: #39FF14 !important;
+    background-color:rgb(53, 51, 51) !important;
+    color:rgb(193, 246, 33);
+}
+
+.btn-danger
+{
+    background-color:rgb(53, 51, 51) !important;
+    color:rgb(193, 246, 33);
+}
+body{
+    background-color:rgb(146, 139, 139);
 }
