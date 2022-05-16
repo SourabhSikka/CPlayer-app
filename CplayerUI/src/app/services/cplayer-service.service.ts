@@ -22,7 +22,7 @@ export class CplayerServiceService {
     return this.http.get(url);
   }
 
-  getEmployeeDetails(pid:String):Observable<any> 
+  getPlayerDetails(pid:String):Observable<any> 
   {
    
     this.apiKey = 'apikey=bb1861a3-6be3-4894-b8ac-b83b9183899c&id='+pid;

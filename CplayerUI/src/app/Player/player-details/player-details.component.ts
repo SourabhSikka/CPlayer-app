@@ -21,7 +21,7 @@ export class PlayerDetailsComponent implements OnInit {
   
     //let id=this.route.snapshot.paramMap.get('id')+"";
     //this.playerId=id;
-    this.CPlayerListService. getEmployeeDetails(this.playerId).subscribe(data=>
+    this.CPlayerListService. getPlayerDetails(this.playerId).subscribe(data=>
       {
         console.log("-----------------------------------------");
        this.CPlayersDetails=data.data;
