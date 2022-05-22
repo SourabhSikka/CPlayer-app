@@ -8,7 +8,7 @@
     
     <mat-card-header class="header" >
         <img mat-card-image class="image" [src]='CPlayersDetails.playerImg' alt="image loading">
-        <mat-card-title>{{CPlayersDetails.name}}</mat-card-title>
+        <mat-card-title >{{CPlayersDetails.name}}</mat-card-title>
       </mat-card-header>
      
       <table class="player">
@@ -18,7 +18,7 @@
         </tr>
         <tr>
             
-            <th>Place Of Birth &nbsp;&nbsp;:</th>
+            <th>Place Of Birth &nbsp;:</th>
             <td colspan="2">{{CPlayersDetails.placeOfBirth}}</td>
         </tr>
         <tr>
@@ -43,6 +43,34 @@
             <th>Bowling Style &nbsp;: </th>
             <td colspan="2">{{CPlayersDetails.bowlingStyle}}</td>
           </tr>
+          <p style="display:block;text-align: center;margin-top:10px;letter-spacing: 2px;font-size: large;"><b><u> Statistics</u></b></p>
+          <tr>
+            
+            <th>Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatus}}</td>
+          </tr>
+          <tr>
+            
+            <th>Credits &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatistics.credits}}</td>
+          </tr>
+          <tr>
+            <th>hitsLimit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatistics.hitsLimit}}</td>
+          </tr>
+          <tr>
+            <th>hitsToday &nbsp;&nbsp;&nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatistics.hitsToday}}</td>
+          </tr>
+          <tr>
+            <th>Server &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatistics.server}}</td>
+          </tr>
+          <tr>
+            <th>queryTime &nbsp;&nbsp;: </th>
+            <td colspan="2">{{CPlayerStatistics.queryTime}}</td>
+          </tr>
+          
     </table>
      
 </mat-card>

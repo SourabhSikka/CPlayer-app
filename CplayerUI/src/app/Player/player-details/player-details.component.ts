@@ -9,7 +9,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class PlayerDetailsComponent implements OnInit {
   playerId:string="";
+
   CPlayersDetails:any=[];
+  CPlayerStatistics:any=[];
+  CPlayerStatus:string=" ";
   constructor(private CPlayerListService: CplayerServiceService, private route:ActivatedRoute, 
     public dialogRef: MatDialogRef<PlayerDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public id:any ) {
@@ -26,7 +29,9 @@ export class PlayerDetailsComponent implements OnInit {
         console.log("-----------------------------------------");
        this.CPlayersDetails=data.data;
        console.log(this.CPlayersDetails);
-      
+       this.CPlayerStatistics=data.info;
+       console.log(this.CPlayerStatistics);
+      this.CPlayerStatus=data.status;
       });
       
   }
