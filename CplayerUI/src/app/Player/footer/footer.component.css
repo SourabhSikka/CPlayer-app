@@ -1,11 +1,12 @@
 footer{
     width: 100%;
     height: 40px;
-    background-color: rgb(44, 44, 44);
+    background-color: black;
     padding: 10px;
     color:rgb(193, 246, 33);
     text-align: center;
     font-size: 10pt;
     position: relative;
     bottom: 0;
+    border-top: 5px solid  rgb(193, 246, 33);
 }
