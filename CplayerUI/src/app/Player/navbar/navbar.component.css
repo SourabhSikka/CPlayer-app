@@ -9,6 +9,7 @@
 #searchButton{
     color: black;
     background-color: rgb(193, 246, 33);
+    font-size: larger;
 }
 
 #two{
@@ -22,5 +23,5 @@
  
 }
 .bottom-border{
-    border-bottom: 5px solid  rgb(193, 246, 33);
+    border-bottom: 2px solid  rgb(193, 246, 33);
 }

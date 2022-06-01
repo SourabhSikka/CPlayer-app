@@ -32,6 +32,8 @@ export class PlayerDetailsComponent implements OnInit {
        this.CPlayerStatistics=data.info;
        console.log(this.CPlayerStatistics);
       this.CPlayerStatus=data.status;
+
+
       });
       
   }

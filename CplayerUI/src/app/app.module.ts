@@ -16,7 +16,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialsModule } from './materials/materials.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+// import {MaterialsModule} from 
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     NavbarComponent,
     FooterComponent,
     PlayerlistComponent,
-    PlayerDetailsComponent
+    PlayerDetailsComponent,
+    LoginComponent,
+    RegisterComponent
     
   ],
   imports: [
@@ -39,7 +46,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatPaginatorModule ,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
