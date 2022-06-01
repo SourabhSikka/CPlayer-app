@@ -6,6 +6,7 @@
     background: linear-gradient(120deg, #2980b9,#8e44ad);
     height: 100vh;
     overflow: hidden;
+    
 }
 
 .center{
@@ -19,9 +20,11 @@
 }
 
 .center h1{
-    text-align: center;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid silver;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid silver;
+  font-style: oblique;
+  color: rgb(16, 57, 161);
 }
 
 .center form{
