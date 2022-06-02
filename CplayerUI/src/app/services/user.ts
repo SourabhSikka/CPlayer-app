@@ -4,6 +4,6 @@ export class User {
       firstName!:'';
       lastName!:'';
       email!:'';
-  static userId: any;
+  
 
 }

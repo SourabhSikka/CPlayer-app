@@ -13,12 +13,19 @@ user!:User
   // savedId: User = 
   public loggedIn=false;
   
+  savedUserId: any
+  USERID:any
+  strWithOutQuotes!:string
+  detailes: any;
   
   constructor(private loginService:AuthServiceService) { }
 
   ngOnInit(): void {
     this.loggedIn=this.loginService.isLoggedIn();
+     this.savedUserId = this.loginService.getUserId();
+      this.strWithOutQuotes= this.savedUserId.replace(/"/g, '');
   }
+  
 
   // saveid= this.loginService.saveou.userId;
   logoutUser(){
@@ -28,5 +35,12 @@ user!:User
   
   // savedId = localStorage.getItem('saveUser');
 
- 
+  getDetailes(){
+    console.log(this.loginService.savedUserId)
+    this.detailes  = this.loginService.getUserDetailes('one').subscribe((data) =>{
+      // this.UserDetailes.firstName = 
+      console.log(data)
+        
+    });
+  }
 }

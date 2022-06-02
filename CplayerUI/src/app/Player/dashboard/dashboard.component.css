@@ -138,5 +138,9 @@ form .txt_field{
     display: flex;
     margin: 20px;
   }
-
- 
+.sides{
+ margin-left: 70px;
+}
+.box{
+  display: flex;
+}

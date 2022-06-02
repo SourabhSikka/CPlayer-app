@@ -36,7 +36,7 @@
         </form>
         <div class="login">
             <a *ngIf="!loggedIn" routerLink="/login"><button class="btn btn-outline" type="submit" id="searchButton">Login</button></a>
-            <a *ngIf="loggedIn" routerLink=""><button class="btn btn-outline" type="submit" id="searchButton" style="margin-right:10px;"></button></a>
+            <a *ngIf="loggedIn" routerLink=""><button class="btn btn-outline" type="submit" id="searchButton" style="margin-right:10px;" (click)="getDetailes()">{{strWithOutQuotes}}</button></a>
             <a *ngIf="loggedIn"><button class="btn btn-outline" type="submit" id="searchButton" (click)="logoutUser()">Logout</button></a>
         </div>
        

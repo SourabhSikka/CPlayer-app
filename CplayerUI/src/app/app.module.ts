@@ -55,7 +55,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     MaterialsModule,
     MatFormFieldModule
   ],
-  // providers: [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
+  providers:[AuthServiceService],
+  //  [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
