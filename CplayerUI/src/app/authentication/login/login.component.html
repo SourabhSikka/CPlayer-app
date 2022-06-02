@@ -4,15 +4,16 @@
     <form method="post" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <div class="txt_field">
             <input
-            [(ngModel)]="user.userId"
+            [(ngModel)]="user.userId" [(ngModel)]="credentials.userId"
             name="userId"
+            
             type="text" required  formControlName="userId" id="saveId">
             <span></span>
             <label>User Id</label>
         </div>
         <div class="txt_field">
             <input
-            [(ngModel)]="user.password"
+            [(ngModel)]="user.password" [(ngModel)]="credentials.password"
             name="password"
             type="password" required formControlName="password">
             <span></span>
@@ -20,13 +21,15 @@
         </div>
         <div class="two">
             <input type="submit" value="Login">
-            <input type="reset" value="Reset" style="margin-left:10px;">
+            <input type="reset" value="Clear" style="margin-left:10px;">
         </div>
         
         <div class="signup_link">
           Not a member?  <a routerLink="/register" >SignUp</a>
         </div>
     </form>
+    {{credentials | json}}
    
 </div>
 </div>
+

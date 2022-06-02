@@ -10,7 +10,9 @@ import { User } from 'src/app/services/user';
 export class NavbarComponent implements OnInit {
 
 user!:User
+  // savedId: User = 
   public loggedIn=false;
+  
   
   constructor(private loginService:AuthServiceService) { }
 
@@ -18,12 +20,13 @@ user!:User
     this.loggedIn=this.loginService.isLoggedIn();
   }
 
-  saveid= this.loginService.SaveUser.userId;
+  // saveid= this.loginService.saveou.userId;
   logoutUser(){
     this.loginService.logout()
     location.reload()
   }
-
+  
+  // savedId = localStorage.getItem('saveUser');
 
  
 }

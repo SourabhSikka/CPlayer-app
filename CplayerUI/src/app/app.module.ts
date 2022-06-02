@@ -9,7 +9,7 @@ import { FooterComponent } from './Player/footer/footer.component';
 import { PlayerlistComponent } from './Player/playerlist/playerlist.component';
 import { PlayerDetailsComponent } from './Player/player-details/player-details.component';
 import {MatButtonModule} from '@angular/material/button';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -21,6 +21,9 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialsModule } from './materials/materials.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AuthGuard } from './auth.guard';
+import { AuthServiceService } from './services/auth-service.service';
+import { AuthInterceptor } from './services/auth.interceptor';
 // import {MaterialsModule} from 
 
 @NgModule({
@@ -52,7 +55,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MaterialsModule,
     MatFormFieldModule
   ],
-  providers: [],
+  // providers: [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

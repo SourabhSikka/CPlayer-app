@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { User } from 'src/app/services/user';
 
@@ -10,15 +11,16 @@ import { User } from 'src/app/services/user';
 })
 export class LoginComponent implements OnInit {
 
-    // credentials={
-    //   userId:'',
-    //   password:''
-    // }
+    credentials={
+      userId:'',
+      password:''
+    }
+    userId = '';
     formGroup!: FormGroup;
     user:User = new User();
-    userIdentity:string=''
+    userIdentity:string= this.credentials.userId;
   
-  //   user =  {
+  //   user2 =  {
   //     userId:'',
   //     password:'',
   //     firstName:'',
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
   //     email:'',
   
   // }
-  
+  //  savedId= this.user2.userId;  
 
   constructor(private loginService: AuthServiceService ) { }
 
@@ -38,7 +40,7 @@ export class LoginComponent implements OnInit {
     
   }
   
-  saveid= this.loginService.SaveUser.userId;
+  // saveid= this.loginService.SaveUser.userId;
 
   onSubmit(){
     console.log('form is submitted')
@@ -57,7 +59,7 @@ export class LoginComponent implements OnInit {
       },
       error =>{
         console.log(error);
-        alert("Wrong user id and password");
+        alert("Wrong user id or password");
       }
       )
 
