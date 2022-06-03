@@ -26,6 +26,8 @@ import { AuthServiceService } from './services/auth-service.service';
 import { AuthInterceptor } from './services/auth.interceptor';
 // import {MaterialsModule} from 
 
+import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     PlayerlistComponent,
     PlayerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PlayerStatisticsComponent
     
   ],
   imports: [

@@ -24,3 +24,8 @@ table tr th
 {
     background-color:#C2DFFF;
 }
+.btn-danger
+{
+    background-color:rgb(53, 51, 51) !important;
+    color:rgb(193, 246, 33);
+}
