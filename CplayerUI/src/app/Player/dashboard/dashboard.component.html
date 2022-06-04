@@ -1,28 +1,8 @@
 <div class="login">
     <div class="center">
-        <h1>User Profile</h1>
+        <h1>{{users.firstName}} {{users.lastName}}</h1>
         <form method="post">
-            <!-- <div class="">
-                <label for="explicit-label-name">First Name: </label>
-                <input type="text" id="explicit-label-name" name="firstname" />
-            </div>
-            <div class="">
-                <label for="explicit-label-name">Last Name: </label>
-                <input type="text" id="explicit-label-name" name="lastname" class="sides" />
-            </div>
-            <div class="">
-                <label for="explicit-label-name">User ID: </label>
-                <input type="text" id="explicit-label-name" name="userid" class="sides" />
-            </div>
-            <div class="">
-                <label for="explicit-label-name">Email: </label>
-                <input type="text" id="explicit-label-name" name="email" />
-            </div>
-            <div class="">
-                <label for="explicit-label-name">Password: </label>
-                <input type="text" id="explicit-label-name" name="password" />
-            </div> -->
-            <h1>{{strWithOutQuotes}}</h1>
+           
 
             <div class="box">
                 <ul type="none">
@@ -33,11 +13,11 @@
                     <li><h3>Password</h3></li>
                 </ul>
                 <ul type="none">
-                    <li><h4>{{UserDetailes.firstName}}</h4></li>
-                    <li><h3>{{UserDetailes.lastName}}</h3></li>
-                    <li><h3>{{UserDetailes.email}}</h3></li>
-                    <li><h3>{{UserDetailes.userId}}</h3></li>
-                    <li><h3>{{UserDetailes.password}}</h3></li>
+                    <li><h3>{{users.firstName}}</h3></li>
+                    <li><h3>{{users.lastName}}</h3></li>
+                    <li><h3>{{users.email}}</h3></li>
+                    <li><h3>{{users.userId}}</h3></li>
+                    <li><h3>{{users.password}}</h3></li>
                 </ul>
             </div>
 
@@ -45,12 +25,8 @@
 
 
             <div class="two">
-                <input type="submit" value="Update" (click)="getDetailes()">
+                <input type="submit" (click)="Update()"  value="Update" >
                 <input type="submit" value="Home" style="margin-left:10px;">
-            </div>
-            
-            <div class="signup_link">
-              Not a member?  <a routerLink="/register" >SignUp</a>
             </div>
         </form>
         <!-- {{credentials | json}} -->

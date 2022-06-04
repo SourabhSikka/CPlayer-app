@@ -7,6 +7,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { NavbarComponent } from './Player/navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
+import { DashboardComponent } from './Player/dashboard/dashboard.component';
 
 const routes: Routes = [
 
@@ -23,12 +24,16 @@ const routes: Routes = [
   {
     path:'Playerlist',
     component:PlayerlistComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path:'PlayerDetails/:id',
     component: PlayerDetailsComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
+  },
+  {
+    path:'UserProfile',
+    component:DashboardComponent
   }
   
   

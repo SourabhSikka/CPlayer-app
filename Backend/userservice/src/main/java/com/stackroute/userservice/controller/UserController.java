@@ -55,7 +55,7 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping("/login/{id}")
+	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable String id){
 		try {
 			return new ResponseEntity<User>(userService.getUserById(id), HttpStatus.OK);

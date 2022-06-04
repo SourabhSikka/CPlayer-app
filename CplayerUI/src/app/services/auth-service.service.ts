@@ -1,38 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../authentication/login/login.component';
+import { User } from './user';
 
 
-
+export const USER_ID = "username";
 export const TOKEN_NAME:string = "jwt_token";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService implements OnInit {
+export class AuthServiceService{
 
 
-  baseUrl="http://localhost:8081/api/v1/userservice"
-  savedUserId: any;
-  userID: any;
- 
+  loginPoint!: string;
+  registerPoint!: string;
+  userDetailesPoint!:string;
+  username!: string;
 
-
-  constructor(private http:HttpClient) {}
-
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-    this.savedUserId = this.getUserId();
-      this.userID= this.savedUserId.replace(/"/g, '');
+  constructor(private http:HttpClient, private router: Router) {
+   this.loginPoint =  "http://localhost:8081/api/v1/userservice/login";
+   this.registerPoint = "http://localhost:8081/api/v1/userservice/register";
+   this.userDetailesPoint = "http://localhost:8081/api/v1/userservice/user/"
   }
+
+ 
   
  
   
     //login user // generate token
-  dologin(user: any):Observable<any> {
-    const url = "http://localhost:8081/api/v1/userservice/login";
-    // `${this.baseUrl}/login`;
-    localStorage.setItem('saveUser',JSON.stringify(user.userId));
+  dologin(user: User) {
+    const url = this.loginPoint;
+    sessionStorage.setItem(USER_ID,user.userId);
+    this.username = sessionStorage.getItem(USER_ID)!;
     return this.http.post(url, user);
   }
 
@@ -55,28 +56,36 @@ export class AuthServiceService implements OnInit {
   }
 
 
-  //for logout the user
-  logout(){
-    localStorage.removeItem("token");
-    localStorage.removeItem('saveUser');
-    return true;
-  }
-  getUserId(){
-    return localStorage.getItem('saveUser');
-  }
-
+  
   getToken(){
     return localStorage.getItem("token");    
   }
+
+  getUserId(){
+    return sessionStorage.getItem(USER_ID);
+  }
+
   registerUser(newUser: any) {
-    const url ="http://localhost:8081/api/v1/userservice/register";
+    const url =this.registerPoint;
     return this.http.post(url, newUser, {responseType: 'text'});
   }
 
 
-  getUserDetailes(userid:any){
-    const url = `http://localhost:8081/api/v1/userservice/login/${userid}`;
-    return this.http.get(url,userid);
+  getUserDetailes(userId: any){
+     const url = `${this.userDetailesPoint}${userId}` ;
+     return this.http.get(url);
+  }
+  
+
+  
+  //for logout the user
+  logout(){
+    localStorage.removeItem("token");
+    localStorage.clear();
+    sessionStorage.removeItem(USER_ID);
+    sessionStorage.clear();
+    console.log("logged out");
+    return true;
   }
 
 }

@@ -20,22 +20,16 @@ export class LoginComponent implements OnInit {
     user:User = new User();
     userIdentity:string= this.credentials.userId;
   
-  //   user2 =  {
-  //     userId:'',
-  //     password:'',
-  //     firstName:'',
-  //     lastName:'',
-  //     email:'',
-  
-  // }
-  //  savedId= this.user2.userId;  
+    USERID!:string;
+  static userID: any;
+    
 
   constructor(private loginService: AuthServiceService ) { }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
-      userId: new FormControl("",[Validators.required]),
-      password: new FormControl("",[Validators.required])
+      userId: new FormControl(" ",[Validators.required]),
+      password: new FormControl(" ",[Validators.required])
      });
     
   }
@@ -44,6 +38,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     console.log('form is submitted')
+    console.log("User----->"+this.user.userId);
     if((this.user.userId!='' && this.user.password!='') &&(this.user.userId!=null && this.user.password!=null))
     {
       console.log('We have to submit')
@@ -59,16 +54,12 @@ export class LoginComponent implements OnInit {
       },
       error =>{
         console.log(error);
+
         alert("Wrong user id or password");
       }
       )
 
-      // this.authService.loginUser(this.user).subscribe(data => {
-      //   console.log("Login successful");
-      //   if(data['token']) {
-      //     this.authService.setToken(data['token']);
-      //     this.router.navigate(['/players/search']);
-      //   }
+  
     }else{
       console.log("Fields are empty")
     }

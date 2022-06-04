@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { User } from 'src/app/services/user';
@@ -9,35 +10,32 @@ import { User } from 'src/app/services/user';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private LoginServices:AuthServiceService) { }
-  detailes:any
-  UserDetailes:any
-  firstname!:''
-  loggedUser = this.LoginServices.savedUserId;
-  
-  savedUserId: any
-  strWithOutQuotes!:string
+  userID!:string;
+  firstName!:string;
+  lastName!:string;
+  email!:string;
+  password!:string;
+  name!:string;
+  USERID!:string;
+  // user: User = new User;
+  users:any;
+  constructor(private LoginService:AuthServiceService){
+    this.USERID = LoginService.getUserId()!;
+    this.name = LoginService.getUserId()!;
+   
 
-
-
+  }
 
   ngOnInit(): void {
-    this.getDetailes();
-    this.savedUserId = this.LoginServices.getUserId();
-    this.strWithOutQuotes= this.savedUserId.replace(/"/g, '');
-    console.log(this.loggedUser)
+    this.LoginService.getUserDetailes(this.name).subscribe((data)=>{
+      console.log("Data",data);
+     this.users = data!;
+    })
   }
+    Update(){
+     
+    }
 
-
-  publicid = this.strWithOutQuotes
-  getDetailes(){
-    
-    this.detailes  = this.LoginServices.getUserDetailes(`${this.strWithOutQuotes}`).subscribe((data) =>{
-      // this.UserDetailes.firstName = 
-      this.UserDetailes= data;
-      console.log(data)
-      
-        
-    });
-  }
+ 
+ 
 }
