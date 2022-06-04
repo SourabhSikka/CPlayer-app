@@ -8,6 +8,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { NavbarComponent } from './Player/navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './Player/dashboard/dashboard.component';
+import { UpdateComponent } from './authentication/update/update.component';
 
 const routes: Routes = [
 
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path:'UserProfile',
     component:DashboardComponent
+  },
+  {
+    path:'update',
+    component:UpdateComponent
   }
   
   

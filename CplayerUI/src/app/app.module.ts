@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthGuard } from './auth.guard';
 import { AuthServiceService } from './services/auth-service.service';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { UpdateComponent } from './authentication/update/update.component';
 // import {MaterialsModule} from 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     PlayerlistComponent,
     PlayerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UpdateComponent
     
   ],
   imports: [

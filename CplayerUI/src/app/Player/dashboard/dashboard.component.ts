@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { User } from 'src/app/services/user';
 
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit {
   USERID!:string;
   // user: User = new User;
   users:any;
-  constructor(private LoginService:AuthServiceService){
+  constructor(private LoginService:AuthServiceService,private router:Router){
     this.USERID = LoginService.getUserId()!;
     this.name = LoginService.getUserId()!;
    
@@ -33,7 +34,7 @@ export class DashboardComponent implements OnInit {
     })
   }
     Update(){
-     
+      this.router.navigate(['/UserProfile']);
     }
 
  

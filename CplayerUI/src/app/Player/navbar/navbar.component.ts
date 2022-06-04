@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { User } from 'src/app/services/user';
 
@@ -13,10 +14,11 @@ export class NavbarComponent implements OnInit {
   user!: User;
   public loggedIn=false;
   USERID!:string;
+  searchName!:string;
  
 
   
-  constructor(private loginService:AuthServiceService) { }
+  constructor(private loginService:AuthServiceService, private router:Router) { }
 
   ngOnInit(): void {
     this.loggedIn=this.loginService.isLoggedIn();
@@ -27,7 +29,13 @@ export class NavbarComponent implements OnInit {
  
   logoutUser(){
     this.loginService.logout()
+    
+    this.router.navigate(['/']);
     location.reload()
+    
+  }
+  searchOnClick(){
+    console.log("Name",this.searchName)
   }
   
 

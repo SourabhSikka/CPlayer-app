@@ -18,11 +18,13 @@ export class AuthServiceService{
   registerPoint!: string;
   userDetailesPoint!:string;
   username!: string;
+  updatePoint!:string;
 
   constructor(private http:HttpClient, private router: Router) {
    this.loginPoint =  "http://localhost:8081/api/v1/userservice/login";
    this.registerPoint = "http://localhost:8081/api/v1/userservice/register";
-   this.userDetailesPoint = "http://localhost:8081/api/v1/userservice/user/"
+   this.userDetailesPoint = "http://localhost:8081/api/v1/userservice/user/";
+  this.updatePoint = "http://localhost:8081/api/v1/userservice/user/";
   }
 
  
@@ -76,7 +78,10 @@ export class AuthServiceService{
      return this.http.get(url);
   }
   
-
+  updateUser(newUser: any,userId:any) {
+    const url =`${this.updatePoint}${userId}` ;
+    return this.http.put(url, newUser, {responseType: 'text'});
+  }
   
   //for logout the user
   logout(){

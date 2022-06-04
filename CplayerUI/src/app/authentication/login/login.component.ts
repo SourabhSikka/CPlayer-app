@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthServiceService } from 'src/app/services/auth-service.service';
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   static userID: any;
     
 
-  constructor(private loginService: AuthServiceService ) { }
+  constructor(private loginService: AuthServiceService, private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -65,12 +65,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-//   var input = document.getElementById("saveServer");
-// localStorage.setItem("server", input.val());
-// inpu = document.getElementById("saveId");
-// storedValue = this.inpu;
- 
-    
+
+ngAfterViewChecked() {
+  this.changeDetector.detectChanges();
+}
 
 
 }
