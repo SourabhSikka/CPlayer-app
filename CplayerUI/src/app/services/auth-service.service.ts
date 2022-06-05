@@ -1,28 +1,41 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../authentication/login/login.component';
+import { User } from './user';
 
 
-
+export const USER_ID = "username";
 export const TOKEN_NAME:string = "jwt_token";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthServiceService{
 
 
-  baseUrl="http://localhost:8081/api/v1/userservice"
+  loginPoint!: string;
+  registerPoint!: string;
+  userDetailesPoint!:string;
+  username!: string;
+  updatePoint!:string;
 
+  constructor(private http:HttpClient, private router: Router) {
+   this.loginPoint =  "http://localhost:8081/api/v1/userservice/login";
+   this.registerPoint = "http://localhost:8081/api/v1/userservice/register";
+   this.userDetailesPoint = "http://localhost:8081/api/v1/userservice/user/";
+  this.updatePoint = "http://localhost:8081/api/v1/userservice/user/";
+  }
+
+ 
   
-  constructor(private http:HttpClient) {}
+ 
   
-
     //login user // generate token
-  dologin(user: any):Observable<any> {
-    const url = "http://localhost:8081/api/v1/userservice/login";
-    // `${this.baseUrl}/login`;
-  
+  dologin(user: User) {
+    const url = this.loginPoint;
+    sessionStorage.setItem(USER_ID,user.userId);
+    this.username = sessionStorage.getItem(USER_ID)!;
     return this.http.post(url, user);
   }
 
@@ -45,18 +58,39 @@ export class AuthServiceService {
   }
 
 
-  //for logout the user
-  logout(){
-    localStorage.removeItem("token");
-    return true;
-  }
-
+  
   getToken(){
     return localStorage.getItem("token");    
   }
+
+  getUserId(){
+    return sessionStorage.getItem(USER_ID);
+  }
+
   registerUser(newUser: any) {
-    const url ="http://localhost:8081/api/v1/userservice/register";
+    const url =this.registerPoint;
     return this.http.post(url, newUser, {responseType: 'text'});
+  }
+
+
+  getUserDetailes(userId: any){
+     const url = `${this.userDetailesPoint}${userId}` ;
+     return this.http.get(url);
+  }
+  
+  updateUser(newUser: any,userId:any) {
+    const url =`${this.updatePoint}${userId}` ;
+    return this.http.put(url, newUser, {responseType: 'text'});
+  }
+  
+  //for logout the user
+  logout(){
+    localStorage.removeItem("token");
+    localStorage.clear();
+    sessionStorage.removeItem(USER_ID);
+    sessionStorage.clear();
+    console.log("logged out");
+    return true;
   }
 
 }

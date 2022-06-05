@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthGuard } from './auth.guard';
 import { AuthServiceService } from './services/auth-service.service';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { UpdateComponent } from './authentication/update/update.component';
 // import {MaterialsModule} from 
 
 import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
@@ -38,7 +39,11 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
     PlayerStatisticsComponent
+=======
+    UpdateComponent
+>>>>>>> 70ff0704485176bd4ebb853f5a260117e0681c89
     
   ],
   imports: [
@@ -58,7 +63,8 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
     MaterialsModule,
     MatFormFieldModule
   ],
-  // providers: [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
+  providers:[AuthServiceService],
+  //  [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

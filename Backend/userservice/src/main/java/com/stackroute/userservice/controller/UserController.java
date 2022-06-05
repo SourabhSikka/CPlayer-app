@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.userservice.exception.UserNotFoundException;
 import com.stackroute.userservice.model.User;
+import com.stackroute.userservice.repository.UserRepository;
 import com.stackroute.userservice.services.SecurityTokenGenerator;
 import com.stackroute.userservice.services.UserService;
 
@@ -26,7 +28,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private UserRepository userRepo;
+	
 	@Autowired
 	private SecurityTokenGenerator tokenGenerator;
 
@@ -55,7 +59,7 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping("/login/{id}")
+	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable String id){
 		try {
 			return new ResponseEntity<User>(userService.getUserById(id), HttpStatus.OK);
@@ -65,11 +69,11 @@ public class UserController {
 		
 	}
 	
-	public ResponseEntity<?> UpdateDetailes(@RequestBody User updateDetail){
-		return null;
+	@PutMapping("/user/{id}")
+	public ResponseEntity<?> update(@RequestBody User newData ) throws UserNotFoundException
+	{
+		return new ResponseEntity<User>(userRepo.save(newData), HttpStatus.OK);	
 		
 	}
-	
-	
 }
 

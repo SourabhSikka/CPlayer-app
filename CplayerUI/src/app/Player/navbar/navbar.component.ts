@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { User } from 'src/app/services/user';
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,24 +11,33 @@ import { User } from 'src/app/services/user';
 })
 export class NavbarComponent implements OnInit {
 
-user!:User
-  // savedId: User = 
+  user!: User;
   public loggedIn=false;
+  USERID!:string;
+  searchName!:string;
+ 
+
   
-  
-  constructor(private loginService:AuthServiceService) { }
+  constructor(private loginService:AuthServiceService, private router:Router) { }
 
   ngOnInit(): void {
     this.loggedIn=this.loginService.isLoggedIn();
-  }
-
-  // saveid= this.loginService.saveou.userId;
-  logoutUser(){
-    this.loginService.logout()
-    location.reload()
+    this.USERID = this.loginService.getUserId()!;
+    // console.log("User----->"+this.user.userId);
   }
   
-  // savedId = localStorage.getItem('saveUser');
-
  
+  logoutUser(){
+    this.loginService.logout()
+    
+    this.router.navigate(['/']);
+    location.reload()
+    
+  }
+  searchOnClick(){
+    console.log("Name",this.searchName)
+  }
+  
+
+
 }
