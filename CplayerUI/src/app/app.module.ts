@@ -41,9 +41,14 @@ import { FilterPipe } from './shared/filter.pipe';
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
     UpdateComponent,
     SearchComponent,
     FilterPipe
+=======
+    PlayerStatisticsComponent,
+    UpdateComponent
+>>>>>>> 8502a87e63231617d78b9985d644c0c9bce73d5a
     
   ],
   imports: [
