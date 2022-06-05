@@ -39,11 +39,8 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
-<<<<<<< HEAD
-    PlayerStatisticsComponent
-=======
+    PlayerStatisticsComponent,
     UpdateComponent
->>>>>>> 70ff0704485176bd4ebb853f5a260117e0681c89
     
   ],
   imports: [
