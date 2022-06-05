@@ -14,8 +14,8 @@ export class NavbarComponent implements OnInit {
   user!: User;
   public loggedIn=false;
   USERID!:string;
-  searchName!:string;
- 
+  
+  public searchTerm : string ='';
 
   
   constructor(private loginService:AuthServiceService, private router:Router) { }
@@ -34,8 +34,10 @@ export class NavbarComponent implements OnInit {
     location.reload()
     
   }
-  searchOnClick(){
-    console.log("Name",this.searchName)
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.loginService.search.next(this.searchTerm);
   }
   
 

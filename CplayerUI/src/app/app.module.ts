@@ -25,9 +25,11 @@ import { AuthGuard } from './auth.guard';
 import { AuthServiceService } from './services/auth-service.service';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { UpdateComponent } from './authentication/update/update.component';
+import { SearchComponent } from './Player/search/search.component';
 // import {MaterialsModule} from 
 
 import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
     PlayerDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchComponent,
+    FilterPipe
     
   ],
   imports: [

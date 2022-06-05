@@ -1,14 +1,13 @@
 
-<div class="flex-container">
-    <div class="search-block">
-      <form class="example-form">
-        <mat-form-field class="inputW">
-          <input id="search-button-input" matInput type="text" #box (keyup.enter)="onEnter(box.value)" >
-          <mat-placeholder>Search a player by Name</mat-placeholder>
-        </mat-form-field>
-    
-      </form>
-    </div>
-       <player-container [players]="players"></player-container> 
-    </div>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of data  | filter:searchKey:'name'">
+      <div class="card col-md-3">
+        <h3 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{ item.name }}</h3>
+        <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.id}}</p>
+        <p><strong>{{item.country}}</strong> </p>
+      </div>
+    </ng-container>
+  </div>
+</div>
     

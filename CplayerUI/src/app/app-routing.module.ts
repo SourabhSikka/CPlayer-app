@@ -9,11 +9,13 @@ import { NavbarComponent } from './Player/navbar/navbar.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './Player/dashboard/dashboard.component';
 import { UpdateComponent } from './authentication/update/update.component';
+import { SearchComponent } from './Player/search/search.component';
 
 const routes: Routes = [
-
-
- 
+  {
+    path:'search',
+    component:SearchComponent
+  },
   {
     path:'login',
     component:LoginComponent

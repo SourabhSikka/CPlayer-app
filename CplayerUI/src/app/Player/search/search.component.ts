@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { CplayerServiceService } from 'src/app/services/cplayer-service.service';
-import { NavbarComponent } from '../navbar/navbar.component';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -9,18 +10,25 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class SearchComponent implements OnInit {
   service: any;
   players: any;
+  public playerList: any;
+  public data:any;  
+  searchKey:string ="";
 
 
-  constructor(private playerService:CplayerServiceService, private navcomp:NavbarComponent) { }
+  constructor(private playerService:CplayerServiceService, private loginService:AuthServiceService) { }
 
   ngOnInit(): void {
-  }
-  onEnter(searchKey: any) {
-    console.log(searchKey);
-    this.playerService.searchPlayer(searchKey).subscribe((date)=>{
-     console.log()
+    this.playerService.getPlayer().subscribe((res) => {
+      this.playerList = res;
+      this.data=this.playerList.data;
+
+    });
+
+    this.loginService.search.subscribe((val:any)=>{
+      this.searchKey=val;
     })
   }
+  
 }
 
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { NavbarComponent } from '../Player/navbar/navbar.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,12 +10,15 @@ export class CplayerServiceService {
   cplayerApi: String;
   apiKey: String;
   playerInfo:string;
+  
+
   constructor(private http: HttpClient) {
     this.cplayerApi = 'https://api.cricapi.com/v1/players?';
     //this.apiKey = 'apikey=bb1861a3-6be3-4894-b8ac-b83b9183899c';
    // this.apiKey = 'apikey=fb20bf3d-215a-4d5e-88e0-ddece631cea3';
    this.apiKey = 'apikey=290b21e9-ab64-45cd-a7dd-a33e9dde791c';
     this.playerInfo='https://api.cricapi.com/v1/players_info?';
+    
   }
   getAllPlayerList(pid:String): Observable<any> {
     
@@ -31,4 +35,10 @@ export class CplayerServiceService {
     return this.http.get(url);
   }
 
+  getPlayer(){
+    return this.http.get<any>("https://api.cricapi.com/v1/players?apikey=6e224315-4750-4d8b-9ba2-7f00bd93d53a&offset=0&search=")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 }

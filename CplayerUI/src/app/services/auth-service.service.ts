@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable ,BehaviorSubject} from 'rxjs';
 import { LoginComponent } from '../authentication/login/login.component';
 import { User } from './user';
 
@@ -19,6 +19,7 @@ export class AuthServiceService{
   userDetailesPoint!:string;
   username!: string;
   updatePoint!:string;
+  public search = new BehaviorSubject<String>("");
 
   constructor(private http:HttpClient, private router: Router) {
    this.loginPoint =  "http://localhost:8081/api/v1/userservice/login";
