@@ -25,18 +25,11 @@ const routes: Routes = [
   {
     path:'Playerlist',
     component:PlayerlistComponent,
-<<<<<<< HEAD
     //canActivate:[AuthGuard]
-=======
-    // canActivate:[AuthGuard]
->>>>>>> 70ff0704485176bd4ebb853f5a260117e0681c89
   },
   {
     path:'PlayerDetails/:id',
     component: PlayerDetailsComponent,
-<<<<<<< HEAD
-   // canActivate:[AuthGuard]
-=======
     // canActivate:[AuthGuard]
   },
   {
@@ -46,7 +39,6 @@ const routes: Routes = [
   {
     path:'update',
     component:UpdateComponent
->>>>>>> 70ff0704485176bd4ebb853f5a260117e0681c89
   }
   
   
