@@ -3,6 +3,8 @@ import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../authentication/login/login.component';
+import { NavbarComponent } from '../Player/navbar/navbar.component';
+import { SearchComponent } from '../Player/search/search.component';
 import { User } from './user';
 
 
@@ -45,6 +47,8 @@ export class AuthServiceService{
     localStorage.setItem("token",token)
     return true;
   }
+
+ 
 
 
   isLoggedIn(){
@@ -92,7 +96,9 @@ export class AuthServiceService{
     console.log("logged out");
     return true;
   }
-
+  // getSearchResults(){
+  //   return this.searchResults.searchResults();
+  // }
 }
 
 

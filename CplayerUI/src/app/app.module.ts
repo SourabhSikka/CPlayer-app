@@ -28,6 +28,7 @@ import { UpdateComponent } from './authentication/update/update.component';
 // import {MaterialsModule} from 
 
 import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
+import { SearchComponent } from './Player/search/search.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
     LoginComponent,
     RegisterComponent,
     PlayerStatisticsComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchComponent
     
   ],
   imports: [
