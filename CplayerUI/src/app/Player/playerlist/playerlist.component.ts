@@ -6,6 +6,7 @@ import {CplayerServiceService} from 'src/app/services/cplayer-service.service';
 import {Router} from '@angular/router';
 import { PlayerDetailsComponent } from 'src/app/Player/player-details/player-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CricPlayer } from 'src/app/cric-player';
 
 @Component({
   selector: 'app-playerlist',
@@ -17,7 +18,7 @@ export class PlayerlistComponent implements OnInit {
   columnsToDisplay:string[] = ['name','country','actions'];
   
   public CPlayersList:any=[]
-  public cplayer:any;
+  public cplayer:CricPlayer={} as CricPlayer;
   message:string="hellolo"
   dataSource:any;
    showSpinner:boolean=true;
@@ -93,10 +94,14 @@ getList()
     data:this.id
    })
   }
-  addToFavorite()
+  addToFavorite(element:any)
    {
   
-  // this.CPlayerListService. addPlayerToFavoriteList(this.cplayer);
+  this.cplayer.pid=element.id;
+  this.cplayer.name=element.name;
+  this.cplayer.country=element.country;
+  console.log( this.cplayer)
+  this.CPlayerListService. addPlayerToFavoriteList(this.cplayer);
   
    
   }
