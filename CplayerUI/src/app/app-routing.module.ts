@@ -27,12 +27,12 @@ const routes: Routes = [
   {
     path:'Playerlist',
     component:PlayerlistComponent,
-    canActivate:[AuthGuard]
+    //canActivate:[AuthGuard]
   },
   {
     path:'PlayerDetails/:id',
     component: PlayerDetailsComponent,
-     canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path:'UserProfile',

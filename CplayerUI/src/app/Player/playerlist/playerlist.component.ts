@@ -95,16 +95,18 @@ getList()
    })
   }
   addToFavorite(element:any)
-   {
+  {
+ 
+ this.cplayer.pid=element.id;
+ this.cplayer.name=element.name;
+ this.cplayer.country=element.country;
+ console.log( this.cplayer)
+ this.CPlayerListService. addPlayerToFavoriteList(this.cplayer).subscribe(
+   data => {
+
+     console.log(data);
+     })
+ 
   
-  this.cplayer.pid=element.id;
-  this.cplayer.name=element.name;
-  this.cplayer.country=element.country;
-  console.log( this.cplayer)
-  this.CPlayerListService. addPlayerToFavoriteList(this.cplayer).subscribe(
-    data => {
-console.log(data);
-      })
-   
-  }
+ }
    }
