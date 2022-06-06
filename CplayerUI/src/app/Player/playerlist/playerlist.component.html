@@ -21,7 +21,7 @@
                     <mat-header-cell *matHeaderCellDef style="background-color:rgb(193, 246, 33);color:black">Actions</mat-header-cell>
                      <mat-cell *matCellDef="let row ; let element">
                         <button  class="btn btn-warning" [ngStyle]="{'margin-right': '8px'}" (click)="getDetails(element.id)" > View Details </button>
-                          <button class="btn btn-danger"  (click)="addToFavorite(element)">Add to Favorites </button>
+                          <button class="btn btn-danger"  (click)="addToFavorite()">Add to Favorites </button>
                      </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="loading" >

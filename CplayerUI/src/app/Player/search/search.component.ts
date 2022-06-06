@@ -27,11 +27,16 @@ export class SearchComponent implements OnInit {
 
 
   searchResults(){
+    this.searchKey = sessionStorage.getItem('searchname');
+    // sessionStorage.removeItem('searchname');
+    this.PlayerService.getSearchPlayer(this.searchKey).subscribe((data)=>{
+     this.Detailes=data;
+      console.log(this.Detailes);
+    })
   }
-  }
 
 
 
 
 
-
+}
