@@ -1,26 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Injectable, OnInit } from '@angular/core';
+
 import { CplayerServiceService } from 'src/app/services/cplayer-service.service';
-import { NavbarComponent } from '../navbar/navbar.component';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class SearchComponent implements OnInit {
-  service: any;
-  players: any;
+  searchKey:any;
+  PlayersDetails:any=[];
+  Detailes:any=[];
 
-
-  constructor(private playerService:CplayerServiceService, private navcomp:NavbarComponent) { }
+  constructor(private PlayerService:CplayerServiceService) {
+    
+   }
 
   ngOnInit(): void {
+   
+  
   }
-  onEnter(searchKey: any) {
-    console.log(searchKey);
-    this.playerService.searchPlayer(searchKey).subscribe((date)=>{
-     console.log()
-    })
+
+
+  searchResults(){
   }
-}
+  }
+
+
+
+
 
 

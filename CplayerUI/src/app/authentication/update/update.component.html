@@ -30,7 +30,14 @@
                 <span></span>
                 <label>Password</label>
             </div>
-            <input type="submit" value="Update" [disabled]='registerForm.invalid'>
+            <div class="three">
+                <!-- <button class="buttoni">Clear</button> -->
+                <!-- <input type="submit" value="Update" [disabled]='registerForm.invalid'> -->
+                <!-- <input type="submit" value="Cancle" [disabled]='registerForm.invalid'> -->
+                <a id="three"><input type="submit" value="Save" [disabled]='registerForm.invalid' ></a>
+                <!-- <label for="" class="">Update</label> -->
+                <a routerLink="/" id="three"><input type="submit" value="Home" style="margin-left:10px;"></a>
+            </div>
             
         </form>
         <span>.</span>
