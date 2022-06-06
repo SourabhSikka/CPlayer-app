@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
-import { CplayerServiceService } from 'src/app/services/cplayer-service.service';
+
 import { User } from 'src/app/services/user';
 import { SearchComponent } from '../search/search.component';
 
@@ -19,8 +19,9 @@ export class NavbarComponent implements OnInit {
   user!: User;
   public loggedIn=false;
   USERID!:string;
-  searchName!:string;
- 
+  
+  public searchTerm : string ='';
+  searchName!: string;
 
   
   constructor(private loginService:AuthServiceService, private router:Router, private searchCom:SearchComponent) { }
@@ -46,7 +47,6 @@ export class NavbarComponent implements OnInit {
     console.log( sessionStorage.getItem('searchname'));
     this.searchCom.searchResults();
   }
-  
 
 
 }

@@ -12,9 +12,10 @@ import { UpdateComponent } from './authentication/update/update.component';
 import { SearchComponent } from './Player/search/search.component';
 
 const routes: Routes = [
-
-
- 
+  {
+    path:'search',
+    component:SearchComponent
+  },
   {
     path:'login',
     component:LoginComponent

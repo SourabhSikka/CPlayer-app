@@ -1,4 +1,6 @@
+
 import { Component, Injectable, OnInit } from '@angular/core';
+
 import { CplayerServiceService } from 'src/app/services/cplayer-service.service';
 
 @Component({
@@ -31,6 +33,7 @@ export class SearchComponent implements OnInit {
       console.log(this.Detailes);
     })
   }
+
 
 
 
