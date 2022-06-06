@@ -6,7 +6,6 @@ import {CplayerServiceService} from 'src/app/services/cplayer-service.service';
 import {Router} from '@angular/router';
 import { PlayerDetailsComponent } from 'src/app/Player/player-details/player-details.component';
 import { MatDialog } from '@angular/material/dialog';
-import { CricPlayer } from 'src/app/cric-player';
 
 @Component({
   selector: 'app-playerlist',
@@ -18,7 +17,7 @@ export class PlayerlistComponent implements OnInit {
   columnsToDisplay:string[] = ['name','country','actions'];
   
   public CPlayersList:any=[]
-  public cplayer:CricPlayer={} as CricPlayer;
+  public cplayer:any;
   message:string="hellolo"
   dataSource:any;
    showSpinner:boolean=true;
