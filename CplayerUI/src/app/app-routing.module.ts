@@ -41,10 +41,6 @@ const routes: Routes = [
   {
     path:'update',
     component:UpdateComponent
-  },
-  {
-    path:'Search',
-    component:SearchComponent
   }
   
   

@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-
+import {  Router } from '@angular/router';
 import { CplayerServiceService } from 'src/app/services/cplayer-service.service';
-
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -11,28 +11,35 @@ import { CplayerServiceService } from 'src/app/services/cplayer-service.service'
   providedIn: 'root'
 })
 export class SearchComponent implements OnInit {
-  searchKey:any;
+  searchKey:any=[];
   PlayersDetails:any=[];
   Detailes:any=[];
-
-  constructor(private PlayerService:CplayerServiceService) {
+  DetailsData:any=[];
+  constructor(private PlayerService:CplayerServiceService,private router:Router,private  NavbarComponent: NavbarComponent) {
     
    }
 
   ngOnInit(): void {
-   
-  
-  }
-
-
-  searchResults(){
+    console.log("redirected")
     this.searchKey = sessionStorage.getItem('searchname');
-    // sessionStorage.removeItem('searchname');
-    this.PlayerService.getSearchPlayer(this.searchKey).subscribe((data)=>{
-     this.Detailes=data;
-      console.log(this.Detailes);
-    })
+    this.PlayerService.getSearchPlayer(this.searchKey).subscribe((data:any)=>{
+      this.Detailes=data;
+      this.DetailsData=data.data;
+       console.log(this.Detailes);
+       console.log(this.DetailsData)
+       for(let i=0;i<this.DetailsData.length;i++)
+       {
+         console.log(this.DetailsData[i].name)
+       }
+     
+       
+     })
+ 
+ 
   }
+
+
+ 
 
 
 
