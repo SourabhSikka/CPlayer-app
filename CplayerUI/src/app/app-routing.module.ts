@@ -10,7 +10,7 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './Player/dashboard/dashboard.component';
 import { UpdateComponent } from './authentication/update/update.component';
 import { SearchComponent } from './Player/search/search.component';
-
+import { FavouritesComponent } from './Player/favourites/favourites.component';
 const routes: Routes = [
   {
     path:'search',
@@ -27,12 +27,12 @@ const routes: Routes = [
   {
     path:'Playerlist',
     component:PlayerlistComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:'PlayerDetails/:id',
     component: PlayerDetailsComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:'UserProfile',
@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path:'update',
     component:UpdateComponent
+  },
+  {
+    path:'favourites',
+    component:FavouritesComponent
   }
   
   
