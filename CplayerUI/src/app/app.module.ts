@@ -30,6 +30,9 @@ import { SearchComponent } from './Player/search/search.component';
 import { FavouritesComponent } from './Player/favourites/favourites.component';
 import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
 import { MatIconModule } from '@angular/material/icon'
+// import {MaterialsModule} from
+
+import {RecommendComponent} from "./Player/recommend/recommend.component";
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
@@ -52,10 +55,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     PlayerStatisticsComponent,
 
     UpdateComponent,
-    SearchComponent
+    SearchComponent,
+    RecommendComponent
 
 
-    
+
   ],
   imports: [
     BrowserModule,

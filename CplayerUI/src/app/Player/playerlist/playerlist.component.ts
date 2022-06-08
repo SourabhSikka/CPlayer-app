@@ -108,7 +108,7 @@ getList()
  this.CPlayerListService. addPlayerToFavoriteList(this.cplayer).subscribe(
    data => {
 
-     console.log(data);
+     console.log("data is ",data);
      this.snackbar.open("Added to Favorites",'',{
        duration:4000,
        verticalPosition:'top'
@@ -118,6 +118,7 @@ getList()
       this.errorStatus = `${error.status}`;
       const errorMsg = `${error.error.message}`;
       this.statusCode = parseInt(this.errorStatus, 10);
+      console.log("error messages are")
       console.log(this.errorStatus)
       console.log(errorMsg)
       console.log( this.statusCode)

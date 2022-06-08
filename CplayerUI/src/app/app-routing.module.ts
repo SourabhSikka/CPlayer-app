@@ -11,6 +11,9 @@ import { DashboardComponent } from './Player/dashboard/dashboard.component';
 import { UpdateComponent } from './authentication/update/update.component';
 import { SearchComponent } from './Player/search/search.component';
 import { FavouritesComponent } from './Player/favourites/favourites.component';
+import { RecommendComponent } from './Player/recommend/recommend.component';
+
+
 const routes: Routes = [
   {
     path:'search',
@@ -45,9 +48,12 @@ const routes: Routes = [
   {
     path:'favourites',
     component:FavouritesComponent
+  },
+  {
+    path:'recommend',
+    component:RecommendComponent
   }
-  
-  
+
 ];
 
 @NgModule({
