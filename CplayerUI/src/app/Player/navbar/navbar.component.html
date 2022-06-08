@@ -8,7 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item" id="one" > 
+          <li class="nav-item" id="one" >
             <a class="nav-link" aria-current="page" href="#" >
               <button class="btn btn-outline" type="submit" id="searchButton">Home</button>
             </a>
@@ -24,7 +24,7 @@
             </a>
           </li>
           <li class="nav-item" id="one">
-            <a class="nav-link" href="">
+            <a class="nav-link" routerLink="/recommend">
               <button class="btn btn-outline" type="submit" id="searchButton">Recommendations</button>
             </a>
 
@@ -42,11 +42,11 @@
             <a *ngIf="loggedIn" routerLink="/UserProfile"><button class="btn btn-outline" type="submit" id="searchButton" style="margin-right:10px;">{{USERID}}</button></a>
             <a *ngIf="loggedIn"><button class="btn btn-outline" type="submit" id="searchButton" (click)="logoutUser()">Logout</button></a>
         </div>
-       
+
       </div>
     </div>
   </nav>
- 
+
 
 </div>
 

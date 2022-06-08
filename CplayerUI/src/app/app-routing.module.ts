@@ -10,6 +10,7 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './Player/dashboard/dashboard.component';
 import { UpdateComponent } from './authentication/update/update.component';
 import { SearchComponent } from './Player/search/search.component';
+import {RecommendComponent} from "./Player/recommend/recommend.component";
 
 const routes: Routes = [
   {
@@ -41,9 +42,12 @@ const routes: Routes = [
   {
     path:'update',
     component:UpdateComponent
+  },
+  {
+    path:'recommend',
+    component:RecommendComponent
   }
-  
-  
+
 ];
 
 @NgModule({

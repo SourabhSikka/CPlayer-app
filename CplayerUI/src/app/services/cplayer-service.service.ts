@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { CricPlayer } from '../cric-player';
 export const USER_NAME = "username";
@@ -15,7 +15,7 @@ export class CplayerServiceService {
   playerInfo:string;
   favouritEndPoint: string;
   searchInfo:string;
-
+  recommendEndPoint: string;
   username: string="";
 
 
@@ -27,23 +27,24 @@ export class CplayerServiceService {
     this.playerInfo='https://api.cricapi.com/v1/players_info?';
 
     this.searchInfo = "https://api.cricapi.com/v1/players?apikey=6e224315-4750-4d8b-9ba2-7f00bd93d53a&offset=0&search=";
-    this.favouritEndPoint= 'http://localhost:7072/api/v1/favoriteservice';
+    this.favouritEndPoint= 'http://localhost:8081/api/v1/favoriteservice';
+    this.recommendEndPoint= 'http://localhost:8081/api/v1/player/recommend/10';
 }
   getAllPlayerList(pid:String): Observable<any> {
-    
-    this.apiKey = 'apikey=fb20bf3d-215a-4d5e-88e0-ddece631cea3&id='+pid;
+
+    this.apiKey = 'apikey=38a6ce32-a7e4-4727-98f2-a4411af86318&id='+pid;
     const url = `${this.playerInfo}${this.apiKey}`;
     return this.http.get(url);
   }
 
-  getPlayerDetails(pid:String):Observable<any> 
+  getPlayerDetails(pid:String):Observable<any>
   {
-   
-    this.apiKey = 'apikey=290b21e9-ab64-45cd-a7dd-a33e9dde791c&id='+pid;
+
+    this.apiKey = 'apikey=38a6ce32-a7e4-4727-98f2-a4411af86318&id='+pid;
     const url = `${this.playerInfo}${this.apiKey}`;
     return this.http.get(url);
   }
-  addPlayerToFavoriteList(cPlayer:CricPlayer) 
+  addPlayerToFavoriteList(cPlayer:CricPlayer)
   {
     console.log("caled");
     this.username =  sessionStorage.getItem(USER_NAME) || '{}';
@@ -51,13 +52,22 @@ export class CplayerServiceService {
    console.log("sent.........")
    console.log(url);
   return this.http.post(url, cPlayer)
-}
-getSearchPlayer(searchKey:any){
+  }
+  getSearchPlayer(searchKey:any){
   const url = `${this.searchInfo}${searchKey}`;
   return this.http.get(url);
+  }
 
-}
+  getRecommendPlayerList(){
+    const headerDict = {
+      'Accept': 'application/json, text/plain, */*',
+      'Access-Control-Allow-Origin':'*',
+      'Content-Type':'application/json',
+    }
+    const headers = new HttpHeaders(headerDict);
+    return this.http.get(`${this.recommendEndPoint}`, {headers});
+  }
 
-  
+
 
 }
