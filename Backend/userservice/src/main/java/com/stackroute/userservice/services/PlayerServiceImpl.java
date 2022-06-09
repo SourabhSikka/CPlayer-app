@@ -45,7 +45,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public PlayerResponse getRemotePlayerResponse() {
-        String url = "https://api.cricapi.com/v1/players?apikey=bb1861a3-6be3-4894-b8ac-b83b9183899c";
+        String url = "https://api.cricapi.com/v1/players?apikey=fb20bf3d-215a-4d5e-88e0-ddece631cea3";
         ResponseEntity<PlayerResponse> forEntity = restTemplate.getForEntity(url, PlayerResponse.class);
         return forEntity.getBody();
     }

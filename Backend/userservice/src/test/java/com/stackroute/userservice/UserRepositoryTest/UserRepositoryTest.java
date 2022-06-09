@@ -49,4 +49,3 @@ public class UserRepositoryTest {
 		userRepository.delete(user);
 	}
 }
-

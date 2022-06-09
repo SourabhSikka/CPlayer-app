@@ -40,7 +40,7 @@ export class CplayerServiceService {
   getPlayerDetails(pid:String):Observable<any>
   {
 
-    this.apiKey = 'apikey=bb1861a3-6be3-4894-b8ac-b83b9183899c&id='+pid;
+    this.apiKey = 'apikey=fb20bf3d-215a-4d5e-88e0-ddece631cea3&id='+pid;
     const url = `${this.playerInfo}${this.apiKey}`;
     return this.http.get(url);
   }
