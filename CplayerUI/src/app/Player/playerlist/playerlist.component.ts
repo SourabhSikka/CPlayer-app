@@ -6,6 +6,8 @@ import {CplayerServiceService} from 'src/app/services/cplayer-service.service';
 import {Router} from '@angular/router';
 import { PlayerDetailsComponent } from 'src/app/Player/player-details/player-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CricPlayer } from 'src/app/cric-player';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-playerlist',
@@ -17,12 +19,14 @@ export class PlayerlistComponent implements OnInit {
   columnsToDisplay:string[] = ['name','country','actions'];
   
   public CPlayersList:any=[]
-  public cplayer:any;
+  public cplayer: CricPlayer={} as CricPlayer;
   message:string="hellolo"
   dataSource:any;
    showSpinner:boolean=true;
    public check: String='1';
    public id:any;
+   statusCode!: number;
+   errorStatus: string="";
    public CricketPlayers:string[] = ["b58ee4c9-8260-4013-af8d-26b67ef713c3",
    "b8de1138-caff-4621-95b9-3bdeffa6fc7e",
    "546acd20-8197-40dc-b895-89eb3c5cdf94",
@@ -43,7 +47,7 @@ export class PlayerlistComponent implements OnInit {
   
    @ViewChild(MatPaginator) paginator: MatPaginator |undefined;
    @ViewChild(MatSort) sort: MatSort |undefined;
-   constructor(private CPlayerListService: CplayerServiceService,private router:Router,public dialog: MatDialog) { }
+   constructor(private CPlayerListService: CplayerServiceService,private router:Router,public dialog: MatDialog,private snackbar:MatSnackBar) { }
  
    ngOnInit(): void {
      for(let i=0;i<25;i++)
@@ -95,16 +99,31 @@ getList()
   }
   addToFavorite(element:any)
   {
- 
+
  this.cplayer.pid=element.id;
  this.cplayer.name=element.name;
  this.cplayer.country=element.country;
+ console.log("---------------------------------------")
  console.log( this.cplayer)
  this.CPlayerListService. addPlayerToFavoriteList(this.cplayer).subscribe(
    data => {
 
-     console.log(data);
+     console.log("data is ",data);
+     this.snackbar.open("Added to Favorites",'',{
+       duration:4000,
+       verticalPosition:'top'
      })
+     }, error => {
+
+      this.errorStatus = `${error.status}`;
+      const errorMsg = `${error.error.message}`;
+      this.statusCode = parseInt(this.errorStatus, 10);
+      console.log("error messages are")
+      console.log(this.errorStatus)
+      console.log(errorMsg)
+      console.log( this.statusCode)
+      alert(errorMsg)
+    })
  
   
  }

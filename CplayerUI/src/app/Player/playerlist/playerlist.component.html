@@ -22,6 +22,10 @@
                      <mat-cell *matCellDef="let row ; let element">
                         <button  class="btn btn-warning" [ngStyle]="{'margin-right': '8px'}" (click)="getDetails(element.id)" > View Details </button>
                           <button class="btn btn-danger"  (click)="addToFavorite(element)">Add to Favorites </button>
+<!--                          
+                          <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="addToFavorite(element)">
+                            <mat-icon>favorite</mat-icon>
+                          </button> -->
                      </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="loading" >

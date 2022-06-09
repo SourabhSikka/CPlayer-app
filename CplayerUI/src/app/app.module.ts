@@ -26,12 +26,15 @@ import { AuthServiceService } from './services/auth-service.service';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { UpdateComponent } from './authentication/update/update.component';
 import { SearchComponent } from './Player/search/search.component';
+// import {MaterialsModule} from 
+import { FavouritesComponent } from './Player/favourites/favourites.component';
+import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
+import { MatIconModule } from '@angular/material/icon'
 // import {MaterialsModule} from
 
-import { PlayerStatisticsComponent } from './Player/player-statistics/player-statistics.component';
 import {RecommendComponent} from "./Player/recommend/recommend.component";
 
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -48,7 +51,7 @@ import {RecommendComponent} from "./Player/recommend/recommend.component";
     UpdateComponent,
     SearchComponent,
 
-
+    FavouritesComponent,
     PlayerStatisticsComponent,
 
     UpdateComponent,
@@ -73,7 +76,9 @@ import {RecommendComponent} from "./Player/recommend/recommend.component";
     FormsModule,
     ReactiveFormsModule,
     MaterialsModule,
-    MatFormFieldModule
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers:[AuthServiceService],
   //  [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],

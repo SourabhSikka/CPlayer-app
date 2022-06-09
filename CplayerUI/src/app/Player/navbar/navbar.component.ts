@@ -51,10 +51,23 @@ export class NavbarComponent implements OnInit {
     // console.log("Name",this.searchName)
     console.log( sessionStorage.getItem('searchname'));
     this.searchKey = sessionStorage.getItem('searchname');
+
     // sessionStorage.removeItem('searchname');
+    console.log("redirected")
+    this.searchKey = sessionStorage.getItem('searchname');
+    this.PlayerService.getSearchPlayer(this.searchKey).subscribe((data:any)=>{
+      this.Detailes=data;
+      this.DetailsData=data.data;
+       console.log(this.Detailes);
+       console.log(this.DetailsData)
+       for(let i=0;i<this.DetailsData.length;i++)
+       {
+         console.log(this.DetailsData[i].name)
+   }
     this.router.navigate(['/search']);
     
    
+    })
   }
 
 
