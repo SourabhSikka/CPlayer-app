@@ -1,16 +1,25 @@
 
+<div class="search">
+    <input class="form-control me-2" id="search" type="search" placeholder="Search player" [(ngModel)]=" searchName" aria-label="Search" required>
+   <button class="btn btn-outline" style="background-color:rgb(193, 246, 33);" type="submit" id="searchButton" (click)="onSearching()">Search</button>
+</div>
 
-<h1>
-    Bhanu
-</h1>
 
-
-
-<div class="row">
-    <div *ngFor="let d of DetailsData; let index=index; ">
-        
-<h1>{{d.name}}</h1>
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+ <div fxFlex="25%" *ngFor="let d of Detailes">
+    <mat-card class="example-card">
+        <mat-card-title>{{d.name}}</mat-card-title>
+        <h3>{{d.country}}</h3>
+        <!-- <mat-card-title>{{d.country}}</mat-card-title> -->
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>  
+      </mat-card>
 </div>
 </div>
+</div>
+
 
 

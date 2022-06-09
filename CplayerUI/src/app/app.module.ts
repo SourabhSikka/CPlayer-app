@@ -32,6 +32,7 @@ import { PlayerStatisticsComponent } from './Player/player-statistics/player-sta
 import { MatIconModule } from '@angular/material/icon'
 // import {MaterialsModule} from
 
+
 import {RecommendComponent} from "./Player/recommend/recommend.component";
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -78,7 +79,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MaterialsModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers:[AuthServiceService],
   //  [[{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]],

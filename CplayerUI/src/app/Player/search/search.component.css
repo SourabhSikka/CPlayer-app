@@ -37,3 +37,25 @@
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
 }
+
+
+.search{
+
+    display: flex;
+}
+
+#search{
+    width: 300px;
+}
+
+.content{
+    padding: 16px;
+    width: 300px;
+}
+
+.content > mat-card{
+    width: 400px;
+    margin: 20%;
+   
+   
+}

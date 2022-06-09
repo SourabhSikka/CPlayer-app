@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   PlayersDetails:any=[];
   Detailes:any=[];
   DetailsData:any=[];
+  searchName!:string
   constructor(private PlayerService:CplayerServiceService,private router:Router,private route: ActivatedRoute,private navbarComponent:NavbarComponent) {
     
    }
@@ -29,6 +30,16 @@ export class SearchComponent implements OnInit {
    this.Detailes=this.navbarComponent.DetailsData;
      console.log(this.Detailes)
  
+  }
+
+
+
+
+  onSearching(){
+    this.PlayerService.getSearchPlayer(this.searchName).subscribe((data:any)=>{
+      console.log(data)
+      this.Detailes = data.data;
+    })
   }
 
 }
