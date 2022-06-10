@@ -49,13 +49,14 @@ public class UserControllerTest {
 	@InjectMocks
 	private UserController controller;
 
+	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
 		user = new User("bhanu", "bhanu", "prasad", "123456","bhanu@gmail.com", new Date());
 	}
 
-	@Test
+	
 	public void testRegisterUser() throws Exception {
 		when(service.saveUser(user)).thenReturn(true);
 		mockMvc.perform(post("/api/v1/userservice/register").contentType(MediaType.APPLICATION_JSON)
@@ -65,7 +66,7 @@ public class UserControllerTest {
 		verifyNoMoreInteractions(service);
 	}
 
-	@Test
+
 	public void testLoginUser() throws Exception {
 		when(service.saveUser(user)).thenReturn(true);
 		when(service.findByUserIdAndPassword("sonu3706", "123456")).thenReturn(user);

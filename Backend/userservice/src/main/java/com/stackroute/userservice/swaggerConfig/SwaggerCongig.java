@@ -1,4 +1,4 @@
-package com.stackroute.favouriteservice.config;
+package com.stackroute.userservice.swaggerConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,28 +12,30 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
-	
+public class SwaggerCongig {
+
 	@Bean
 	public Docket postsApi() {
 
-	return new Docket(DocumentationType.SWAGGER_2).groupName("Team-07").apiInfo(apiInfo()).select()
+	return new Docket(DocumentationType.SWAGGER_2).groupName("cplayer").apiInfo(apiInfo()).select()
 
 	.paths(regex("/api/v1.*")).build();
 
 	}
+
+
+
 	private ApiInfo apiInfo() {
 
-		return new ApiInfoBuilder().title("Favorite service")
+	return new ApiInfoBuilder().title("CPlayer")
 
-		.description("Favorite service API Documentation Generateed Using SWAGGER2 for our Cplayer Rest API")
+	.description("xadmin Course API Documentation Generateed Using SWAGGER2 for our Course Rest API")
 
-		.termsOfServiceUrl("")
+	.termsOfServiceUrl("")
 
-		.license("Bhanu")
+	.license("Team")
 
-		.licenseUrl("").version("1.0").build();
+	.licenseUrl("").version("1.0").build();
 
-		}
-
+	}
 }
