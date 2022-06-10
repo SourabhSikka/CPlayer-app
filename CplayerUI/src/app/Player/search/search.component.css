@@ -24,6 +24,8 @@
 .card {
     padding: 20px;
     margin: 50px;
+
+
 }
 
 .card img {
@@ -40,7 +42,7 @@
 
 
 .search{
-
+    
     display: flex;
 }
 
@@ -48,7 +50,7 @@
     width: 300px;
 }
 
-.content{
+/* .content{
     padding: 16px;
     width: 300px;
 }
@@ -58,4 +60,25 @@
     margin: 20%;
    
    
-}
+} */
+.two{
+    display: flex;
+    margin: 20px;
+    padding-top:15px;
+    margin-left:-7px;
+  }
+  input[type="submit"]{
+    width: 100%;
+    height: 50px;
+     border: 1px solid rgb(193, 246, 33) ;
+    background: #4adf0f;
+    border-radius: 5px;
+    font-size: 18px;
+    color:black ;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    
+
+  }
+ 

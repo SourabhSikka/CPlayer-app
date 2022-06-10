@@ -6,7 +6,7 @@ footer{
     color:rgb(193, 246, 33);
     text-align: center;
     font-size: 10pt;
-    position: relative;
+    position: absolute;
     bottom: 0;
     border-top: 2px solid  rgb(193, 246, 33);
 }
