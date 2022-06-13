@@ -51,6 +51,8 @@ addPlayerToFavoriteList(cPlayer:CricPlayer)
  const url = this.favouritEndPoint + "/user/" + this.username + "/player";
  console.log("sent.........")
  console.log(url);
+ console.log(cPlayer)
+ console.log(cPlayer.pid)
 return this.http.post(url, cPlayer)
 }
 getFavoriteList(): Observable<CricPlayer[]> {
