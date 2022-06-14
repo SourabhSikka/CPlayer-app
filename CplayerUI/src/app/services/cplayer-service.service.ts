@@ -14,7 +14,7 @@ export class CplayerServiceService {
   apiKey: String;
   playerInfo:string;
   favouritEndPoint: string;
-  searchInfo:string;
+  searchInfo:string; 
   recommendEndPoint: string;
   username: string="";
 
@@ -28,7 +28,7 @@ export class CplayerServiceService {
     this.playerInfo='https://api.cricapi.com/v1/players_info?';
      this.searchInfo = "https://api.cricapi.com/v1/players?apikey=6e224315-4750-4d8b-9ba2-7f00bd93d53a&offset=0&search=";
     this.favouritEndPoint= 'http://localhost:8083/api/v1/favoriteservice';
-    this.recommendEndPoint= 'http://localhost:8081/api/v1/player/recommend/10';
+    this.recommendEndPoint= 'http://localhost:8082/api/v1/player/recommend/10';
 }
 getAllPlayerList(pid:String): Observable<any> {
     
