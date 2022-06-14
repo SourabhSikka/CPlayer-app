@@ -54,7 +54,7 @@ export class FavouritesComponent implements OnInit {
       console.log(this.errorStatus)
       console.log(errorMsg)
       console.log( this.statusCode)
-      alert(errorMsg)
+      // alert(errorMsg)
       this.router.navigate(['/Playerlist']);
 
     });
