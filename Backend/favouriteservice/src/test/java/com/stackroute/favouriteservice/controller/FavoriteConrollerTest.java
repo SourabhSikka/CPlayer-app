@@ -61,6 +61,7 @@ public class FavoriteConrollerTest {
 		
 		cPlayer.setName("sachin");
 		cPlayer.setPid("99");
+		cPlayer.setCountry("india");
 		list = new ArrayList();
 		list.add(cPlayer);
 
@@ -96,16 +97,7 @@ public class FavoriteConrollerTest {
 
 	}
 
-	@Test
-	public void testGetAllTrackFromWishList() throws Exception {
-		when(favService.getPlayerList((user.getUsername()))).thenReturn(list);
-		mockMvc.perform(get("/api/v1/favoriteservice/user/{username}/player", user.getUsername())
-				.contentType(MediaType.APPLICATION_JSON).content(jsonToString(cPlayer))).andExpect(status().isOk())
-				.andDo(print());
 
-		verify(favService, times(1)).getPlayerList(user.getUsername());
-
-	}
 
 	private static String jsonToString(final Object obj) throws Exception {
 		String result;

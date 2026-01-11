@@ -1,0 +1,68 @@
+version: '3.2'
+services:
+  userservice:
+    image:  mongo
+    restart: always
+    depends_on:
+      - EurekaServer
+      - mysql
+    ports:
+      - 8081:8081
+    healthcheck:
+      test: "exit 0"
+      
+  favoriteservice:
+    image: mongo
+    restart: always
+    depends_on:
+      - EurekaServer
+      - mongo
+    ports:
+      - 8083:8083
+    healthcheck:
+      test: "exit 0"
+      
+  Recommendations:
+    image: mongo
+    restart: always
+    depends_on:
+      - EurekaServer
+      - mysql
+    ports:
+      - 8082:8082
+    healthcheck:
+      test: "exit 0"
+      
+  EurekaServer:
+    image: mongo
+    restart: always
+    ports:
+      - 8767:8767      
+    healthcheck:
+      test: "exit 0"
+      
+  cplayerui:
+    image: cplayerapp
+    container_name: angular-docker
+    ports:
+      - 8080:8080 
+    healthcheck:
+      test: "exit 0"
+
+  mysql:
+    image: mysql
+    container_name: mysql_container
+    ports:
+      - 3306:3306    
+    environment:
+      MYSQL_DATABASENAME: cplayersdb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: test    
+      MYSQL_PASSWORD: host@123
+      
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017:27017
+      

@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
     error =>{
       alert("User Already exist");
     });
+    
   }
 
  

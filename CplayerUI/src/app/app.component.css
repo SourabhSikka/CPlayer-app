@@ -1,12 +1,13 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.footer{
-    
+.footer {
+    position: fixed;
     width: 100%;
 }
-.router1{
+
+.router1 {
     position: relative;
 }

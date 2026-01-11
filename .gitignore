@@ -1,1 +1,71 @@
 /.metadata/
+
+# Git ignore for CPlayer App (Java + Angular + Docker)
+
+# =========================
+# Java / Maven (Spring Boot)
+# =========================
+**/target/
+**/generated-sources/
+**/generated-test-sources/
+**/maven-status/
+**/maven-archiver/
+**/test-classes/
+**/*.class
+
+# Packaged artifacts
+**/*.jar
+**/*.war
+
+# =========================
+# Angular / Node
+# =========================
+**/node_modules/
+**/dist/
+**/.angular/
+**/.cache/
+**/.npm/
+**/.pnpm-store/
+**/.yarn/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+**/.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs & temp
+# =========================
+**/*.log
+logs/
+**/*.tmp
+**/*.swp
+
+# =========================
+# Docker & env
+# =========================
+.env
+**/.env
+# Optional: local overrides (uncomment if used)
+# docker-compose.override.yml
+
+# =========================
+# Test / Coverage
+# =========================
+**/coverage/
+**/surefire-reports/
+**/reports/
