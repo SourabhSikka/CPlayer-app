@@ -1,9 +1,9 @@
 Cricket Player Management Application (CPlayer App)
 
-Backend: Spring Boot 2.7.0, Spring Cloud (Netflix Eureka, API Gateway), Java 17, Maven, RESTful APIs, JWT Authentication
-Frontend: Angular 13, TypeScript, Angular Material, RxJS, JWT-Decode
-Databases: MySQL (User data), MongoDB (Favorites & Recommendations)
-DevOps: Docker, Docker Compose, Microservices Architecture
+Backend: Spring Boot 2.7.0, Spring Cloud (Netflix Eureka, API Gateway), Java 17, Maven, RESTful APIs, JWT Authentication | 
+Frontend: Angular 13, TypeScript, Angular Material, RxJS, JWT-Decode | 
+Databases: MySQL (User data), MongoDB (Favorites & Recommendations) | 
+DevOps: Docker, Docker Compose, Microservices Architecture | 
 Integration: RabbitMQ (Message Queue), Swagger UI (API Documentation)
 
 • Architected distributed microservices backend using Spring Cloud ecosystem with Eureka-based service registry and Spring Cloud Gateway for centralized API routing, load balancing, and cross-cutting concerns
