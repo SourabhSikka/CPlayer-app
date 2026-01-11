@@ -1,0 +1,13 @@
+
+Backend/**/*.java linguist-language=Java
+Backend/**/*.xml linguist-language=Maven
+
+
+CplayerUI/node_modules/** linguist-vendored
+CplayerUI/dist/** linguist-generated
+
+
+*.java linguist-language=Java
+"@ | Out-File -FilePath .gitattributes -Encoding utf8
+
+Get-Content .gitattributes
